@@ -16,12 +16,20 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "cypress"
+    ],
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   },
   "browserslist": {
     "production": [
@@ -36,7 +44,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.4.0",
     "cypress": "^9.1.0",
-    "eslint-plugin-cypress": "^2.12.1"
+    "eslint-plugin-cypress": "^2.12.1",
+    "jest": "^27.4.0"
   }
 }
