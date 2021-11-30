@@ -1,5 +1,9 @@
 describe('The home page', () => {
-    it('successfully loads', () => {
+    before(() => {
         cy.visit('/')
+    })
+
+    it('renders App component', () => {
+        cy.get('#app')
     })
 })

@@ -1,4 +1,4 @@
-import rootReducer from "."
+import rootReducer from "./index"
 import expect from 'expect'
 import { updateInput, updateOutput } from '../actions'
 
@@ -25,7 +25,7 @@ describe('Root reducer', () => {
 
     it('should overwrite existing value', () => {
         const existingState = { md_input: '', html_output: 'sample output' }
-        expect(rootReducer(initialState, updateOutput('rewriting the output'))).toEqual({
+        expect(rootReducer(existingState, updateOutput('rewriting the output'))).toEqual({
             md_input: '',
             html_output: 'rewriting the output'
         })
