@@ -28,7 +28,7 @@
       "cypress"
     ],
     "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
+      "^.+\\.(js|jsx)$": "babel-jest"
     }
   },
   "browserslist": {
@@ -44,10 +44,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.4",
-    "babel-jest": "^27.4.0",
+    "@cypress/react": "^5.10.3",
+    "babel-eslint": "^10.1.0",
     "cypress": "^9.1.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "jest": "^27.4.0"
+    "eslint-plugin-cypress": "^2.12.1"
   }
 }
