@@ -10,14 +10,15 @@ cache:
     - ~/.cache
 
 install:
-  - npm ci
+  - yarn install --frozen-lockfile
   - npm run cy:verify
 
 script:
-  - npm test
+  - yarn test
   #   ## print all Travis environment variables for debugging
-  - $(npm bin)/print-env TRAVIS
-  - $(npm bin)/cypress run --project test
+  - npm start & wait-on http://localhost:3000
+  # run all Cypress tests and record on the dashboard
+  - npx cypress run --record --key f8b73633-9e35-4eb4-930b-cf7d913a04f8
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   - kill $(jobs -p) || true
