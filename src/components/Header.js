@@ -1,10 +1,15 @@
 import React from "react"
+import { Navbar, Container, Row } from 'react-bootstrap'
 
 function Header() {
     return (
-        <div id='header' data-cy='header'>
-            Header
-        </div>
+        <Navbar bg='light' expand='lg'>
+            <Container id='header' data-cy='header'>
+                <Row>
+                    <Navbar.Brand href="/">Markdown Preview</Navbar.Brand>
+                </Row>
+            </Container>
+        </Navbar>
     )
 }
 
