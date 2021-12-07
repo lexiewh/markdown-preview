@@ -3,11 +3,11 @@ import { Navbar, Container } from 'react-bootstrap'
 
 function Footer() {
     return (
-        <Navbar bg='light' expand='lg'>
-            <Container id='footer' data-cy='footer'>
+        <Navbar bg='light' expand='lg' id='footer' data-cy='footer'>
+            <Container>
                 <Navbar.Collapse className='justify-content-center'>
                     <Navbar.Text>
-                        © 2021 - Developed by <a href='https://github.com/lexiewh'>Lexie White</a>
+                        © 2021 - Developed by <a href='https://github.com/lexiewh' target='_blank'>Lexie White</a>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>
