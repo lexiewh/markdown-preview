@@ -17,8 +17,9 @@ const mapDispatchToProps = (dispatch) => {
 function MdEditor({ md_input, updateCode }) {
 
     return(
-        <div id='editor' data-cy='editor'>
+        <div id='editor-container' data-cy='editor'>
             <CodeEditor
+                id='editor'
                 value={md_input}
                 language="md"
                 onChange={(evn) => updateCode(evn.target.value)}

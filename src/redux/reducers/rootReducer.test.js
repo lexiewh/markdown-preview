@@ -1,8 +1,9 @@
 import rootReducer from "./index"
 import expect from 'expect'
 import { updateInput, updateOutput } from '../actions'
+import { initial_code } from "../../utils/constants"
 
-const initialState = { "html_output": "", "md_input": "" }
+const initialState = { "html_output": "", "md_input": initial_code }
 
 describe('Root reducer', () => {
     it('should return initial state', () => {
@@ -18,7 +19,7 @@ describe('Root reducer', () => {
 
     it('should handle HTML_OUTPUT', () => {
         expect(rootReducer(initialState, updateOutput('sample output'))).toEqual({
-            md_input: '',
+            md_input: initial_code,
             html_output: 'sample output'
         })
     })
