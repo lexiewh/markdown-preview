@@ -21,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "start:ci": "serve --no-clipboard --listen ${PORT:-3000}",
     "test": "jest",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open"
