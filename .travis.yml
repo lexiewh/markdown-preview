@@ -9,8 +9,11 @@ cache:
     - ~/.npm
     - ~/.cache
 
+install:
+  - npm install -g wait-on
+
 before_script:
-  - npm run start &
+  - npm run start & wait-on http://localhost:3000
 
 script:
   - npm test
