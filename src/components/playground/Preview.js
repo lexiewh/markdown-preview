@@ -21,7 +21,6 @@ function Preview({ md_input, html_output, updateHtml }) {
     useEffect(() => {
         const converter = new showdown.Converter()
         updateHtml(converter.makeHtml(md_input))
-        console.log(typeof(html_output))
     })
 
     return (
