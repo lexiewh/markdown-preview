@@ -22,7 +22,7 @@ script:
   - npx cypress run --record --key f8b73633-9e35-4eb4-930b-cf7d913a04f8
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
-  - kill $(jobs -p) || true
+  - npm run build
 
 after_success:
   - npm install -g firebase-tools
