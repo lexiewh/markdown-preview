@@ -1,7 +1,8 @@
-import { MD_INPUT, HTML_OUTPUT } from "../constants/action-types";
+import { MD_INPUT, HTML_OUTPUT, MD_TO_HTML } from "../constants/action-types";
+import { initial_code } from "../../utils/constants";
 
 const initialState = {
-    md_input: '',
+    md_input: initial_code,
     html_output: ''
 }
 

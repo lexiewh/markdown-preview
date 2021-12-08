@@ -1,15 +1,28 @@
-import { useState } from 'react';
+import { connect } from 'react-redux';
 import CodeEditor from '@uiw/react-textarea-code-editor'
+import { updateInput } from '../../redux/actions';
 
-function MdEditor() {
-    const [code, setCode] = useState('')
+const mapStateToProps = state => {
+    return {
+        md_input: state.md_input
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateCode: (event) => dispatch(updateInput(event))
+    }
+}
+
+function MdEditor({ md_input, updateCode }) {
 
     return(
-        <div id='editor' data-cy='editor'>
+        <div id='editor-container' data-cy='editor'>
             <CodeEditor
-                value={code}
+                id='editor'
+                value={md_input}
                 language="md"
-                onChange={(evn) => setCode(evn.target.value)}
+                onChange={(evn) => updateCode(evn.target.value)}
                 padding={15}
                 style={{
                     fontSize: 12,
@@ -21,4 +34,4 @@ function MdEditor() {
     )
 }
 
-export default MdEditor
+export default connect(mapStateToProps, mapDispatchToProps)(MdEditor)

@@ -41,11 +41,17 @@ body {
     height: 3rem;
 }
 
-.playground-row, .editor-cell, .preview-cell, #editor, #preview, .w-tc-editor {
+.playground-row, .editor-cell, .preview-cell, #preview, .w-tc-editor {
     height: 100%;
 }
 
 #preview {
     border: 1px solid grey;
     padding: 10px;
+    overflow-y: auto;
+}
+
+#editor-container {
+    overflow-y: scroll;
+    max-height: 100%;
 }

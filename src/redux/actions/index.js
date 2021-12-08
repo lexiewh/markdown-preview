@@ -1,4 +1,5 @@
 import { MD_INPUT, HTML_OUTPUT } from "../constants/action-types";
+import showdown from 'showdown'
 
 export function updateInput(value) {
     return {
