@@ -18,11 +18,6 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 html_output: action.payload
             }
-        case MD_TO_HTML:
-            return {
-                ...state,
-                html_output: action.payload
-            }
         default:
             return state
     }
