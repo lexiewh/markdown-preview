@@ -6,7 +6,7 @@ function Header() {
         <Navbar bg='light' expand='lg'>
             <Container id='header' data-cy='header'>
                 <Row>
-                    <Navbar.Brand href="/">Markdown Preview</Navbar.Brand>
+                    <Navbar.Brand data-cy='title' href="/">Markdown Preview</Navbar.Brand>
                 </Row>
             </Container>
         </Navbar>
