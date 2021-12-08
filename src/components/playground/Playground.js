@@ -6,15 +6,10 @@ function Playground() {
   return (
     <Container id="playground" data-cy='playground'>
       <Row className='playground-row'>
-          <Col md={5} className='editor-cell'>
+          <Col sm={6} className='editor-cell'>
             <MdEditor />
           </Col>
-          <Col md={2} className='convert-container'>
-            <div>
-              <Button id='convert-btn'>Convert</Button>
-            </div>
-          </Col>
-          <Col md={5} className='preview-cell'>
+          <Col sm={6} className='preview-cell'>
             <Preview />
           </Col>
       </Row>

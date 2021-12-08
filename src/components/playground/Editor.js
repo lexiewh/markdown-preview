@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CodeEditor from '@uiw/react-textarea-code-editor'
-import { updateInput } from '../../redux/actions';
+import { updateInput, mdToHtmlConvert } from '../../redux/actions';
 
 const mapStateToProps = state => {
     return {
@@ -10,17 +10,23 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateCode: (event) => dispatch(updateInput(event))
+        updateCode: (event) => dispatch(updateInput(event)),
+        convertMd: (event) => dispatch(mdToHtmlConvert(event))
     }
 }
 
-function MdEditor({ md_input, updateCode }) {
+function MdEditor({ md_input, updateCode, convertMd }) {
+    const updateAndConvert = event => {
+        updateCode(event)
+        convertMd(event)
+    }
+
     return(
         <div id='editor' data-cy='editor'>
             <CodeEditor
                 value={md_input}
                 language="md"
-                onChange={(evn) => updateCode(evn.target.value)}
+                onChange={(evn) => updateAndConvert(evn.target.value)}
                 padding={15}
                 style={{
                     fontSize: 12,
