@@ -12,7 +12,7 @@ cache:
 script:
   - npm test
   #   ## print all Travis environment variables for debugging
-  - npm start:ci &
+  - npm run start:ci &
   # run all Cypress tests and record on the dashboard
   - npx cypress run --record --key f8b73633-9e35-4eb4-930b-cf7d913a04f8
   # after all tests finish running we need
